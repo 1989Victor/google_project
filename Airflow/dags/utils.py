@@ -1,16 +1,13 @@
 import awswrangler as wr
 import boto3
-import pandas as pd
 import gspread
-from datetime import datetime
+import pandas as pd
 from airflow.models import Variable
 
 session = boto3.Session(
-    aws_access_key_id = Variable.get('ACCESS_KEY'),
-    aws_secret_access_key = Variable.get('SECRET_KEY'),
-    region_name='us-east-2'
-)
-
+    aws_access_key_id=Variable.get('ACCESS_KEY'),
+    aws_secret_access_key=Variable.get('SECRET_KEY'),
+    region_name='us-east-2')
 
 
 def get_results():
@@ -26,15 +23,14 @@ def get_results():
 
 def convert_all_data(all_data):
     """
-    Convert the extracted data to Dataframe and format. 
+    Convert the extracted data to Dataframe and format.
     """
     all_data_new = pd.DataFrame.from_dict(all_data)
-    
     new_columns = []
-    
+
     for col in all_data_new.columns:
         # To convert to lower case
-        col = col.lower()
+        # col = col.lower()
         # To trim the whitespace
         col = col.strip()
         # To separate with underscore
@@ -43,11 +39,15 @@ def convert_all_data(all_data):
     all_data_new.columns = new_columns
     return all_data_new
 
+
 def load_df_to_s3(df):
     """"
     Load the dataframe to s3 bucket.
     """
-    s3_pathway = "s3://victor-gspread-bucket/google_sheet_folder/Group_names.parquet"
+    s3_bucket = 'victor-gspread-bucket'
+    s3_folder = 'google_sheet_folder'
+    
+    s3_pathway = f"s3://{s3_bucket}/{s3_folder}/Group_names.parquet"
     wr.s3.to_parquet(
                  df=df,
                  path=s3_pathway,
@@ -67,5 +67,6 @@ def full_pipeline():
     extract = get_results()
     transform = convert_all_data(extract)
     load_df_to_s3(transform)
+
 
 print("Successfull")
