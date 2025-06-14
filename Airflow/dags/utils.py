@@ -26,11 +26,12 @@ def convert_all_data(all_data):
     Convert the extracted data to Dataframe and format.
     """
     all_data_new = pd.DataFrame.from_dict(all_data)
+   
     new_columns = []
 
     for col in all_data_new.columns:
         # To convert to lower case
-        # col = col.lower()
+        col = col.lower()
         # To trim the whitespace
         col = col.strip()
         # To separate with underscore
