@@ -28,10 +28,9 @@ The “State of Origin” field was filled with random values for demonstration 
 
 Data Retrieval and Cleaning
 
-Using the gspread library, data was retrieved from the google sheet. Before processing:
-Column names were formatted by converting to lowercase.
-Whitespace was trimmed.
-Words in column headers were replaced with underscores (e.g., "First Name" to first_name).
+Using the gspread library, data was retrieved from the google sheet. 
+Before processing, column names were formatted by converting to lowercase, whitespace was trimmed and
+words in column headers were replaced with underscores (e.g., "First Name" to first_name).
 
 Data Transformation and Storage
 
