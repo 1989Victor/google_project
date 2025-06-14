@@ -4,7 +4,7 @@ This project demonstrates a ETL pipeline where google hheet is used as the data 
 The entire process is orchestrated using Apache Airflow and automated to run on a daily schedule.
 
 Technologies Used
-1. Google Sheets (via gspread library)
+1. Google Sheet (via gspread library)
 2. Python (Data processing & transformation)
 3. Pandas (Dataframe manipulation)
 4. Apache Airflow (Workflow orchestration)
