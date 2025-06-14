@@ -23,7 +23,7 @@ The sheet was populated with names of class participants.
 The “State of Origin” field was filled with random values for demonstration purposes.
 
 Data Retrieval and Cleaning
-Using the gspread library, data was retrieved from the google Sheet. Before processing:
+Using the gspread library, data was retrieved from the google sheet. Before processing:
 Column names were formatted by converting to lowercase.
 Whitespace was trimmed.
 Words in column headers were replaced with underscores (e.g., "First Name" to first_name).
