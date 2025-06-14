@@ -1,6 +1,6 @@
 Project Overview
 
-This project demonstrates a lightweight ETL pipeline where Google Sheets is used as the data source, and the final output is stored in AWS S3 as a Parquet file. 
+This project demonstrates a ETL pipeline where google hheet is used as the data source, and the final output is stored in AWS S3 as a Parquet file. 
 The entire process is orchestrated using Apache Airflow and automated to run on a daily schedule.
 
 Technologies Used
@@ -9,11 +9,11 @@ Technologies Used
 3. Pandas (Dataframe manipulation)
 4. Apache Airflow (Workflow orchestration)
 5. AWS S3 (Cloud storage)
-6. Parquet (file format)
+6. Parquet (File format)
 
 Steps Implemented
-Google Sheets Creation
-A Google Sheet was created via Gmail, with the following columns:
+Google Sheet Creation
+A google sheet was created via Gmail, with the following columns:
 first name
 Last namE
  State of Origin 
@@ -23,10 +23,10 @@ The sheet was populated with names of class participants.
 The “State of Origin” field was filled with random values for demonstration purposes.
 
 Data Retrieval and Cleaning
-Using the gspread library, data was retrieved from the Google Sheet. Before processing:
+Using the gspread library, data was retrieved from the google Sheet. Before processing:
 Column names were formatted by converting to lowercase.
 Whitespace was trimmed.
-Words in column headers were replaced with underscores (e.g., "First Name" → first_name).
+Words in column headers were replaced with underscores (e.g., "First Name" to first_name).
 
 Data Transformation and Storage
 The cleaned data was converted into a Pandas DataFrame.
