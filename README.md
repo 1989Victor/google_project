@@ -1,6 +1,6 @@
 Project Overview
 
-This project demonstrates a ETL pipeline where google hheet is used as the data source, and the final output is stored in AWS S3 as a Parquet file. 
+This project demonstrates a ETL pipeline where google sheet is used as the data source, and the final output is stored in AWS S3 as a Parquet file. 
 The entire process is orchestrated using Apache Airflow and automated to run on a daily schedule.
 
 Technologies Used
